@@ -23,6 +23,7 @@ function APIs() {
 						key={item.id}>
 						<Text style={styles.title}>{item.title}</Text>
 						<Text style={styles.subtitle}>{item.body}</Text>
+						<Text style={styles.subtitle}>main</Text>
 					</View>
 				))}
 			</ScrollView>
