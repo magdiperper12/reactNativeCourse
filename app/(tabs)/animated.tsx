@@ -6,55 +6,68 @@ import {
 	StyleSheet,
 	Dimensions,
 	Text,
+	Alert,
+	TouchableOpacity,
+	Pressable,
 } from 'react-native';
 
 export default function AnimatedBox() {
-	// Retrieve screen dimensions
-	const { width, height } = Dimensions.get('window');
-
-	// Initialize animation value
-	const fadeAnim = useRef(new Animated.Value(0)).current;
-
-	// Function to trigger fade-in animation
-	const fadeIn = () => {
-		Animated.timing(fadeAnim, {
-			toValue: 1,
-			duration: 500,
-			useNativeDriver: true, // Optimize performance with native driver
-		}).start();
-	};
-
 	return (
-		<View style={styles.container}>
-			{/* Animated box */}
-			<Animated.View style={[styles.box, { opacity: fadeAnim }]} />
-			{/* Button to trigger animation */}
+		<View style={compindStyle}>
 			<Button
-				title='Fade In'
-				onPress={fadeIn}
+				title='Learn More'
+				color='#841584'
+				accessibilityLabel='Learn more about this purple button'
 			/>
-			{/* Display screen dimensions */}
-			<Text style={styles.text}>
-				Width: {width}, Height: {height}
-			</Text>
+			<TouchableOpacity style={styles.btn}>
+				<Text style={styles.text}>hello</Text>
+			</TouchableOpacity>
+			<Pressable
+				style={styles.btn}
+				onPress={() => alert('hello')}>
+				<Text style={styles.text}>click</Text>
+			</Pressable>
+			<Button
+				title='Press me'
+				onPress={() => Alert.alert('Simple Button pressed')}
+			/>
 		</View>
 	);
 }
+const isActive = true;
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
+		backgroundColor: '#000',
 	},
-	box: {
-		width: 100,
-		height: 100,
+	btn: {
 		backgroundColor: 'blue',
-		marginBottom: 10,
+		paddingHorizontal: 40,
+		margin: 10,
+		paddingVertical: 10,
+		borderRadius: 10,
 	},
 	text: {
-		fontSize: 18,
-		marginTop: 10,
+		color: 'white',
 	},
 });
+
+const active = StyleSheet.create({
+	container: {
+		backgroundColor: 'green',
+	},
+});
+
+const notActive = StyleSheet.create({
+	container: {
+		backgroundColor: 'red',
+	},
+});
+
+const compindStyle = StyleSheet.compose(
+	styles.container,
+	isActive ? active.container : notActive.container
+);

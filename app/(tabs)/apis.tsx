@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Dimensions, ScrollView } from 'react-native';
 
 function APIs() {
-	const x = { title: '', body: '' };
+	const x = { title: '', body: '', id: 0 };
 	const [data, setData] = useState([x]);
 	const fetchData = async () => {
 		const repo = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -18,7 +18,9 @@ function APIs() {
 				style={styles.scrolling}
 				showsHorizontalScrollIndicator={false}>
 				{data.map((item) => (
-					<View style={styles.contentBox}>
+					<View
+						style={styles.contentBox}
+						key={item.id}>
 						<Text style={styles.title}>{item.title}</Text>
 						<Text style={styles.subtitle}>{item.body}</Text>
 					</View>

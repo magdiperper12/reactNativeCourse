@@ -78,6 +78,19 @@ export default function TabLayout() {
 					),
 				}}
 			/>
+			<Tabs.Screen
+				name='Alert'
+				options={{
+					title: 'Alert',
+					tabBarIcon: ({ color }) => (
+						<IconSymbol
+							size={28}
+							name='paperplane.fill'
+							color={color}
+						/>
+					),
+				}}
+			/>
 		</Tabs>
 	);
 }
