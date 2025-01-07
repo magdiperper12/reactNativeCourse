@@ -63,7 +63,7 @@ const active = StyleSheet.create({
 
 const notActive = StyleSheet.create({
 	container: {
-		backgroundColor: 'red',
+		backgroundColor: 'blue',
 	},
 });
 
