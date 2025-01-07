@@ -11,6 +11,7 @@ import {
 	StyleSheet,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+
 import FaIcon from 'react-native-vector-icons/FontAwesome';
 import { launchImageLibrary } from 'react-native-image-picker';
 
@@ -84,7 +85,9 @@ const AImessage = () => {
 					style={styles.chatWindow}>
 					<View style={styles.header}>
 						<Image
-							source={{ uri: 'https://via.placeholder.com/40' }} // Replace with actual logo URL
+							source={{
+								uri: 'https://images.pexels.com/photos/344738/pexels-photo-344738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+							}} // Replace with actual logo URL
 							style={styles.logo}
 						/>
 						<Text style={styles.headerText}>Historic</Text>

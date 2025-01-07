@@ -1,20 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Dimensions, ScrollView } from 'react-native';
+import {
+	Text,
+	View,
+	StyleSheet,
+	ScrollView,
+	RefreshControl,
+	Platform,
+} from 'react-native';
 
 function APIs() {
 	const x = { title: '', body: '', id: 0 };
 	const [data, setData] = useState([x]);
+	const [refreshing, setRefreshing] = useState(false);
+
 	const fetchData = async () => {
 		const repo = await fetch('https://jsonplaceholder.typicode.com/posts');
 		const data = await repo.json();
 		setData(data);
 	};
+
+	const onRefresh = React.useCallback(() => {
+		setRefreshing(true);
+		setTimeout(() => {
+			setRefreshing(false);
+		}, 7000);
+	}, []);
+	{
+		refreshing && Platform.OS === 'android' && <Text>Refreshing data...</Text>;
+	}
+
 	useEffect(() => {
 		fetchData();
 	}, []);
+
 	return (
 		<View style={styles.container}>
 			<ScrollView
+				refreshControl={
+					<RefreshControl
+						refreshing={refreshing}
+						onRefresh={onRefresh}
+						titleColor='blue' // Optional spinner title color for Android
+						progressBackgroundColor={'red'}
+					/>
+				}
 				style={styles.scrolling}
 				showsHorizontalScrollIndicator={false}>
 				{data.map((item) => (
@@ -23,7 +52,6 @@ function APIs() {
 						key={item.id}>
 						<Text style={styles.title}>{item.title}</Text>
 						<Text style={styles.subtitle}>{item.body}</Text>
-						<Text style={styles.subtitle}>main</Text>
 					</View>
 				))}
 			</ScrollView>
@@ -62,20 +90,3 @@ const styles = StyleSheet.create({
 		gap: 10,
 	},
 });
-
-// const x = { title: '', body: '' };
-// const [data, setData] = useState([x]);
-
-// const fetchData = async () => {
-// 	try {
-// 		const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-// 		const result = await response.json();
-// 		setData(result);
-// 	} catch (error) {
-// 		console.error('Error fetching data:', error);
-// 	}
-// };
-
-// useEffect(() => {
-// 	fetchData();
-// }, []);
