@@ -111,8 +111,12 @@ const AImessage = () => {
 									styles.message,
 									item.type === 'user' ? styles.userMessage : styles.botMessage,
 								]}>
-								<Text style={styles.messageText}>{item.text}</Text>
-								<Text style={styles.timestamp}>{item.time}</Text>
+								<Text style={styles.messageText}>
+									{item.text} {'hello'}
+								</Text>
+								<Text style={styles.timestamp}>
+									{item.time} {'hello'}
+								</Text>
 							</View>
 						)}
 					/>
