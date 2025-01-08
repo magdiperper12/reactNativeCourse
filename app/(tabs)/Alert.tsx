@@ -95,7 +95,7 @@ const AImessage = () => {
 							<Icon
 								name='chevron-down'
 								size={25}
-								color='#FFF'
+								color='#fff'
 							/>
 						</TouchableOpacity>
 					</View>
