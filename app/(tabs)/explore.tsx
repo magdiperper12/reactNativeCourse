@@ -47,7 +47,7 @@ export default function TabTwoScreen() {
 			</Collapsible>
 			<Collapsible title='Android, iOS, and web support'>
 				<ThemedText>
-					To open the web version, press{' '}
+					To open the web version
 					<ThemedText type='defaultSemiBold'>w</ThemedText>{' '}
 				</ThemedText>
 			</Collapsible>
