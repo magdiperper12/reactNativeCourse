@@ -50,13 +50,6 @@ export default function HomeScreen() {
 						an example of a Text component with multiple properties applied to
 						it. This is an example of a Text component with multiple properties
 						applied to it. This is an example of a Text component with multiple
-						properties applied to it. This is an example of a Text component
-						with multiple properties applied to it. This is an example of a Text
-						component with multiple properties applied to it. This is an example
-						of a Text component with multiple properties applied to it. This is
-						an example of a Text component with multiple properties applied to
-						it. This is an example of a Text component with multiple properties
-						applied to it. This is an example of a Text component with multiple
 						properties applied to it.
 					</Text>
 					<ThemedView style={styles.stepContainer}>
