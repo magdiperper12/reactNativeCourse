@@ -50,7 +50,7 @@ function APIs() {
 					<View
 						style={styles.contentBox}
 						key={item.id}>
-						<Text style={styles.title}>title : {item.title}</Text>
+						<Text style={styles.title}> {item.title}</Text>
 						<Text style={styles.subtitle}>{item.body}</Text>
 					</View>
 				))}
