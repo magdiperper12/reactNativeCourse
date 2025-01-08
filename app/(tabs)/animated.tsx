@@ -20,7 +20,7 @@ export default function AnimatedBox() {
 				accessibilityLabel='Learn more about this purple button'
 			/>
 			<TouchableOpacity style={styles.btn}>
-				<Text style={styles.text}>hello</Text>
+				<Text style={styles.text}>welcom</Text>
 			</TouchableOpacity>
 			<Pressable
 				style={styles.btn}
