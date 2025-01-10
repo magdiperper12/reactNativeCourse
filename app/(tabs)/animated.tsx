@@ -25,7 +25,7 @@ export default function AnimatedBox() {
 			<Pressable
 				style={styles.btn}
 				onPress={() => alert('hello')}>
-				<Text style={styles.text}>click</Text>
+				<Text style={styles.text}>Click</Text>
 			</Pressable>
 			<Button
 				title='Press me'
