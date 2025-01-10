@@ -63,10 +63,7 @@ const DATA = [
 		id: '58694a0f-3da1-471f-bd96-145571e9d72',
 		title: 'Third Item',
 	},
-	{
-		id: 'bd7acbea-c1b1-46c2-aed5bb28ba',
-		title: 'First Item',
-	},
+
 	{
 		id: '3ac68afc-c605-48d3-a43',
 		title: 'Second Item',
