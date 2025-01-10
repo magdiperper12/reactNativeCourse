@@ -34,7 +34,7 @@ export default function HomeScreen() {
 						<ThemedText
 							type='title'
 							style={{ color: 'blue', fontSize: 25 }}>
-							Welcome!
+							Welcome?
 						</ThemedText>
 						<HelloWave />
 					</ThemedView>
