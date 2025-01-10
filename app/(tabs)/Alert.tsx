@@ -121,7 +121,7 @@ const AImessage = () => {
 						)}
 					/>
 
-					{isTyping && <Text style={styles.typingIndicator}>Typing...</Text>}
+					{isTyping && <Text style={styles.typingIndicator}>Typing..</Text>}
 
 					<View style={styles.inputContainer}>
 						<TouchableOpacity onPress={handleFileClick}>
